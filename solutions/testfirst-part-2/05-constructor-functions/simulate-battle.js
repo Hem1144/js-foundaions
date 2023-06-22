@@ -7,7 +7,7 @@ function Pokemon(name, health, attackBonus) {
 Pokemon.prototype.biteAttack = function(){ 
     return this.attackBonus + 2;
 }
-
+  
 Pokemon.prototype.isDefeated = function(){ 
     return this.health <= 0; 
 };

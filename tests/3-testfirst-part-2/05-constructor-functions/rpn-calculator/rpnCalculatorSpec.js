@@ -17,8 +17,8 @@ describe('Calculator using reverse polish notation', () => {
 
   it('adds two numbers', () => {
     /*
-     Infix: 2 + 3
-     Postfix: 2 3 +
+    Infix: 2 + 3
+    ostfix: 2 3 +
     */
 
     rpnCalculatorInstance.push(2);
@@ -29,8 +29,8 @@ describe('Calculator using reverse polish notation', () => {
 
   it('adds three numbers', () => {
     /*
-     Infix: 2+3+4
-     Postfix: 2 3 + 4 +
+    Infix: 2+3+4
+    Postfix: 2 3 + 4 +
     */
 
     rpnCalculatorInstance.push(2);
