@@ -3,7 +3,7 @@
 
 // See http://en.wikipedia.org/wiki/Reverse_Polish_notation
 
-describe('Calculator using reverse polish notation', () => {
+describe("Calculator using reverse polish notation", () => {
   let rpnCalculatorInstance;
 
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('Calculator using reverse polish notation', () => {
     rpnCalculatorInstance = new RPNCalculator();
   });
 
-  it('adds two numbers', () => {
+  it("adds two numbers", () => {
     /*
      Infix: 2 + 3
      Postfix: 2 3 +
@@ -26,7 +26,7 @@ describe('Calculator using reverse polish notation', () => {
     expect(rpnCalculatorInstance.value()).toBe(5);
   });
 
-  it('adds three numbers', () => {
+  it("adds three numbers", () => {
     /* 
      Infix: 2+3+4
      Postfix: 2 3 + 4 +
@@ -41,7 +41,7 @@ describe('Calculator using reverse polish notation', () => {
     expect(rpnCalculatorInstance.value()).toBe(9);
   });
 
-  it('subtracts two numbers', () => {
+  it("subtracts two numbers", () => {
     /* 
      Infix: 2-3
      Postfix: 2 3 -
@@ -54,7 +54,7 @@ describe('Calculator using reverse polish notation', () => {
     expect(rpnCalculatorInstance.value()).toBe(-1);
   });
 
-  it('adds and subtracts', () => {
+  it("adds and subtracts", () => {
     /* 
      Infix: 2 + 3 - 4
      Postfix: 2 3 + 4 -
@@ -69,7 +69,7 @@ describe('Calculator using reverse polish notation', () => {
     expect(rpnCalculatorInstance.value()).toBe(1);
   });
 
-  it('multiplies and divides', () => {
+  it("multiplies and divides", () => {
     /* 
      Infix: 2 * 3 / 4
      Postfix: 2 3 * 4 /
@@ -97,28 +97,28 @@ describe('Calculator using reverse polish notation', () => {
   it("fails informatively when there's not enough values stashed away", () => {
     expect(() => {
       rpnCalculatorInstance.plus();
-    }).toThrow('rpnCalculatorInstance is empty');
+    }).toThrow("rpnCalculatorInstance is empty");
 
     expect(() => {
       rpnCalculatorInstance.minus();
-    }).toThrow('rpnCalculatorInstance is empty');
+    }).toThrow("rpnCalculatorInstance is empty");
 
     expect(() => {
       rpnCalculatorInstance.times();
-    }).toThrow('rpnCalculatorInstance is empty');
+    }).toThrow("rpnCalculatorInstance is empty");
 
     expect(() => {
       rpnCalculatorInstance.divide();
-    }).toThrow('rpnCalculatorInstance is empty');
+    }).toThrow("rpnCalculatorInstance is empty");
   });
 
-  it('All methods should be on the RPNCalculator.prototype', () => {
-    expect(typeof RPNCalculator.prototype.plus).toBe('function');
-    expect(typeof RPNCalculator.prototype.minus).toBe('function');
-    expect(typeof RPNCalculator.prototype.divide).toBe('function');
-    expect(typeof RPNCalculator.prototype.times).toBe('function');
-    expect(typeof RPNCalculator.prototype.value).toBe('function');
-    expect(typeof RPNCalculator.prototype.times).toBe('function');
+  it("All methods should be on the RPNCalculator.prototype", () => {
+    expect(typeof RPNCalculator.prototype.plus).toBe("function");
+    expect(typeof RPNCalculator.prototype.minus).toBe("function");
+    expect(typeof RPNCalculator.prototype.divide).toBe("function");
+    expect(typeof RPNCalculator.prototype.times).toBe("function");
+    expect(typeof RPNCalculator.prototype.value).toBe("function");
+    expect(typeof RPNCalculator.prototype.times).toBe("function");
   });
 
   /* 
@@ -127,7 +127,7 @@ describe('Calculator using reverse polish notation', () => {
     for `instanceof`: https://mzl.la/1dqYtqW 
   */
 
-  it('the rpnCalculatorInstance object should be an instance of the RPNCalculator Constructor', function () {
+  it("the rpnCalculatorInstance object should be an instance of the RPNCalculator Constructor", function () {
     expect(rpnCalculatorInstance instanceof RPNCalculator).toBe(true);
   });
 });

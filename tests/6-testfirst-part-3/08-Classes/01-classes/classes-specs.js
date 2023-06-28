@@ -20,7 +20,7 @@ describe('Mammal class', () => {
 
   it('should have an array called offspring', () => {
     expect(myMammal.offspring).toEqual([]);
-  });
+  });  
 
   it('should have a sayHello function on its prototype', () => {
     expect(myMammal.hasOwnProperty('sayHello')).toEqual(false);
