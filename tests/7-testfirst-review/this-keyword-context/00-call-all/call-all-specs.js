@@ -1,13 +1,13 @@
 /* eslint-env jasmine */
 /* eslint-disable no-undef */
 
-describe('call all', () => {
-  it('takes an object and an array and returns an array', () => {
-    let result = callAll({}, [function() {}]);
+describe("call all", () => {
+  it("takes an object and an array and returns an array", () => {
+    let result = callAll({}, [function () {}]);
     expect(Array.isArray(result)).toBe(true);
   });
 
-  it('calls all of the functions in the array', () => {
+  it("calls all of the functions in the array", () => {
     /* NOTE: jasmine.creteSpy() creates a function, it is similar to
        let fnArr = [function one() {return 1},
                     function two() {return 2}
@@ -33,12 +33,12 @@ describe('call all', () => {
     expect(fnArr[1].calls.count()).toEqual(2);
   });
 
-  it('calls each function using the object as the context', () => {
+  it("calls each function using the object as the context", () => {
     const fnArr = [
-      function() {
+      function () {
         this.win = true;
       },
-      function() {
+      function () {
         this.lose = false;
       },
     ];
@@ -49,7 +49,7 @@ describe('call all', () => {
     expect(obj.lose).toEqual(false);
   });
 
-  it('returns an array of each functions return values', () => {
+  it("returns an array of each functions return values", () => {
     const fnArr = [
       function firstName() {
         return this.first;
@@ -59,24 +59,24 @@ describe('call all', () => {
         return this.last;
       },
     ];
-    const obj = { first: 'Nimit', last: 'Maru' };
+    const obj = { first: "Nimit", last: "Maru" };
 
     const result = callAll(obj, fnArr);
-    expect(result).toEqual(['Nimit', 'Maru']);
+    expect(result).toEqual(["Nimit", "Maru"]);
   });
 
-  it('returns an array of each functions return value', () => {
+  it("returns an array of each functions return value", () => {
     const fnArr = [
-      function() {
+      function () {
         return this.a + this.b;
       },
-      function() {
+      function () {
         return this.a + this.c;
       },
-      function() {
+      function () {
         return this.b + this.c;
       },
-      function() {
+      function () {
         return this.a + this.b + this.c;
       },
     ];
@@ -86,8 +86,8 @@ describe('call all', () => {
     expect(result).toEqual([11, 101, 110, 111]);
   });
 
-  it('detects if Function.prototype.call is used on each function in the function array', () => {
-    spyOn(Function.prototype, 'call').and.callThrough(); // checks that Function.prototype.call is used
+  it("detects if Function.prototype.call is used on each function in the function array", () => {
+    spyOn(Function.prototype, "call").and.callThrough(); // checks that Function.prototype.call is used
 
     const obj = {};
 
